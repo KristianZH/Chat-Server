@@ -1,5 +1,7 @@
 package fmi.kpk.command;
 
+import static fmi.kpk.utils.Constants.Commands.SEND_USER;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
@@ -28,6 +30,11 @@ public class SendUserCommand implements Command {
 			toWriter.println(String.format("[%s]: %s", username, message));
 			toWriter.flush();
 		}
+	}
+
+	@Override
+	public String getName() {
+		return SEND_USER;
 	}
 
 }

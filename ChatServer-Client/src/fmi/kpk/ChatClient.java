@@ -21,7 +21,7 @@ public class ChatClient {
 		new ChatClient().run();
 	}
 
-	public void run() throws IOException {
+	public void run() {
 		try (Scanner scanner = new Scanner(System.in)) {
 			System.out.println(ASK_FOR_USERNAME_MESSAGE);
 			String username = scanner.nextLine();
@@ -32,7 +32,11 @@ public class ChatClient {
 				String input = scanner.nextLine();
 				writer.println(input);
 				if (input.equals(DISCONNECT_MESSAGE)) {
-					socket.close();
+					try {
+						socket.close();
+					} catch (IOException e) {
+						System.out.println("Soccet can not be closed: " + e.getMessage());
+					}
 					shoudStop = true;
 				}
 			}

@@ -28,4 +28,13 @@ public class Constants {
 
 		public static final String DISCONNECT = "%s : Disconect from the server\n";
 	}
+
+	public class Commands {
+
+		public static final String DISCONNECT = "disconnect";
+
+		public static final String SEND_ALL = "send-all";
+
+		public static final String SEND_USER = "send-user";
+	}
 }

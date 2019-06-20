@@ -24,7 +24,6 @@ public class ClientRunnable implements Runnable {
 					System.out.println(message);
 				} else {
 					System.out.println(DISCONNECT_MESSAGE);
-					socket.isClosed();
 					return;
 				}
 			}

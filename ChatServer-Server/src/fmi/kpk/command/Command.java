@@ -6,4 +6,6 @@ public interface Command {
 
 	public void exec() throws IOException;
 
+	public String getName();
+
 }
